@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--设置父工程信息-->
+    <parent>
+        <groupId>com.yj</groupId>
+        <artifactId>demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <!--该模块信息-->
+    <groupId>com.yj</groupId>
+    <artifactId>demo-repository</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo-repository</name>
+    <packaging>jar</packaging>
+    <description>Demo project for Spring Boot</description>
+
+    <!--jdk版本-->
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!--引入mysql依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--引入mybatis依赖，启动器-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <!--引入druid数据库连接池（阿里巴巴开源代码）-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
+        <!--引入实体类依赖-->
+        <dependency>
+            <groupId>com.yj</groupId>
+            <artifactId>demo-been</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>com/yj/demorepository/*/mapper/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
